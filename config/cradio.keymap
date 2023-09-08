@@ -47,7 +47,7 @@
             bindings = <&to GAME>;
             layers = <BASE>;
         };
-    }
+    };
 
     behaviors {
         ht_t: hold_tap_tap_preferred {
