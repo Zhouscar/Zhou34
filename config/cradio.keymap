@@ -6,99 +6,218 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &ht_t LCTRL k1  &ht_t LSHFT k2  &ht_t LGUI k3  &ht_t LALT k4
+#define HRMR(k1,k2,k3,k4) &ht_t RALT k1  &ht_t RGUI k2  &ht_t RSHFT k3  &ht_t RCTRL
+
+#define xx &none
+
+#define win_l &kp LC(LEFT)
+#define win_r &kp LC(RIGHT)
+
+#define tab_l &kp LG(LS(LBKT))
+#define tab_r &kp RG(LS(RBKT))
+
+#define wrd_l &kp LA(LEFT)
+#define wrd_r &kp LA(RIGHT)
+
+#define lne_l &kp LG(LEFT)
+#define lne_r &kp LG(RIGHT)
+
+#define d_wrd_l &kp LA(BSPC)
+#define d_wrd_r &kp LA(DEL)
+
+#define d_lne_l &kp LG(BSPC)
+#define d_lne_r &kp LG(DEL)
+
+// Layers
+#define BASE 0
+#define NAV 1
+#define SYM 2
+#define SYM2 3
+#define FUN 4
+#define GAME 5
+#define GAME_NUM 6
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_game {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&to GAME>;
+            layers = <BASE>;
+        };
+    }
+
     behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
+        ht_t: hold_tap_tap_preferred {
             compatible = "zmk,behavior-hold-tap";
+            label = "hold_tap_tap_preferred";
             #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
             bindings = <&kp>, <&kp>;
+        };
+        ht_h: hold_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "hold_tap_hold_preferred";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        lt_t: layer_tap_tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer_tap_tap_preferred";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+        lt_h: layer_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "layer_tap_hold_preferred";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
         };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <NAV SYM>;
+            then-layer = <SYM2>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
+
+        base {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │ ; :      │
+            &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+        //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │  O       │
+            HRML(A,        R,         S,         T)     &kp G          &kp M      HRMR(N,        E,         I,         O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ ' "      │
+            &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp SQT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+                                &lt_h NAV TAB    &ht_h LSHFT BSPC      &lt_t FUN SPACE  &lt_h SYM RET
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
         };
 
-        right_layer {
+        nav {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
+        //│  WIN_L   │   WIN_R  │  TAB_L   │  TAB_R   │          │   │          │  WRD_L   │  UP      │  WRD_R   │  Esc     │
+            win_l      win_r      tab_l      tab_r      xx             xx         wrd_l      &kp UP     wrd_r      &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
-            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SEMI
+        //│  LCTRL   │  LSHFT   │  LCMD    │  LALT    │          │   │  LNE_L   │  LEFT    │  DOWN    │  RIGHT   │  LNE_R   │
+            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             lne_l      &kp LEFT   &kp DOWN   &kp RIGHT  lne_r
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
-           &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
+        //│  CMD Z   │  CMD X   │  CMD C   │          │  CMD V   │   │  D_LNE_L │  D_WRD_L │  DEL     │  D_WRD_R │  D_LNE_R │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  xx         &kp LG(V)      d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_l
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+                                &trans           xx                    xx               &trans
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
         };
 
-        left_layer {
+        sym {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+        //│  !       │   @      │  #       │  $       │  %       │   │  ^       │  7       │  8       │  9       │  *       │
+            &kp EXCL   &kp AT_SIGN &kp HASH  &kp DOLLAR &kp PERCENT    &kp CARET  &kp N7     &kp N8     &kp N9     &kp STAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+        //│  {       │  (       │  )       │  =       │  }       │   │  &       │  4       │  5       │  6       │  ?       │
+            &kp LBRC   &kp LPAR   &kp RPAR   &kp EQUAL  &kp RBRC       &kp AMPS   &kp N4     &kp N5     &kp N6     &kp QMARK
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+        //│  [       │  -       │  _       │  +       │  ]       │   │  0       │  1       │  2       │  3       │  /       │
+            &kp LBKT   &kp MINUS  &kp UNDER  &kp PLUS   &kp RBKT       &kp N0     &kp N1     &kp N2     &kp N3     &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+                                &trans           xx                    xx               &trans
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
         };
 
-        tri_layer {
+        sym2 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│  ~       │          │          │          │          │   │          │  KP_7    │  KP_8    │  KP_9    │  |       │
+            &kp TILDE  xx         xx         xx         xx             xx         &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PIPE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│  `       │          │          │          │          │   │          │  KP_4    │  KP_5    │  KP_6    │  \       │
+            &kp GRAVE  xx         xx         xx         xx             xx         &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+        //│          │          │          │          │          │   │  KP_0    │  KP_1    │  KP_2    │  KP_3    │          │
+            xx         xx         xx         xx         xx             &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  xx 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+                                &trans           xx                    xx               &trans
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
         };
+
+        fun {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  STOP    │  PREV    │  PLAY    │  NEXT    │  BRIU    │   │          │  F7      │  F8      │  F9      │  F10     │
+            &kp C_STOP &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_BRI_UP   xx         &kp F7     &kp F8     &kp F9     &kp F10
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  LCTRL   │  LSHFT   │  LCMD    │  LALT    │  BRID    │   │          │  F4      │  F5      │  F6      │  F11     │
+            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   &kp C_BRI_DN   xx         &kp F4     &kp F5     &kp F6     &kp F11
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  MUTE    │  VOLD    │          │  VOLU    │          │   │          │  F1      │  F2      │  F3      │  F12     │
+            &kp C_MUTE &kp C_VOL_DN xx       &kp C_VOL_UP xx           xx         &kp F1     &kp F2     &kp F3     &kp F12
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                xx               xx                    &trans           xx
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
+        };
+
+        game {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  ESC     │  Q       │  W       │  E       │  R       │   │  T       │  Y       │  U       │  I       │  O       │
+            &kp ESC    &kp Q      &kp W      &kp E      &kp R          &kp T      &kp Y      &kp U      &kp I      &kp O
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  TAB     │  A       │  S       │  D       │  F       │   │  G       │  H       │  J       │  K       │  L       │
+            &kp TAB    &kp A      &kp S      &kp D      &kp F          &kp G      &kp H      &kp J      &kp K      &kp L
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  LSHFT   │  Z       │  X       │  C       │  V       │   │  B       │  N       │  M       │  P       │  /       │
+            &kp LSHFT  &kp Z      &kp X      &kp C      &kp V          &kp N      &kp M      &kp P      &kp P      &kp SLASH 
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                &mo GAME_NUM     &kp SPACE             &kp SPACE        &to BASE
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
+        };
+
+        game_num {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  ESC     │  1       │  2       │  3       │          │   │          │  F7      │  F8      │  F9      │  F10     │
+            &kp ESC    &kp N1     &kp N2     &kp N3     xx             xx         &kp F7     &kp F8     &kp F9     &kp F10
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  TAB     │  4       │  5       │  6       │          │   │          │  F4      │  F5      │  F6      │  F11     │
+            &kp TAB    &kp N4     &kp N5     &kp N6     xx             xx         &kp F4     &kp F5     &kp F6     &kp F11
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  LSHFT   │  7       │  8       │  9       │  0       │   │          │  F1      │  F2      │  F3      │  F12     │
+            &kp LSHFT  &kp N7     &kp N8     &kp N9     &kp N0         xx         &kp F1     &kp F2     &kp F3     &kp F12
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                &trans           xx                    &kp SPACE        &trans
+        //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
+             >
+        };
+        
+       
     };
 };
