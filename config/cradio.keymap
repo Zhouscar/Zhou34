@@ -6,28 +6,28 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht_t LCTRL k1  &ht_t LSHFT k2  &ht_t LGUI k3  &ht_t LALT k4
-#define HRMR(k1,k2,k3,k4) &ht_t RALT k1  &ht_t RGUI k2  &ht_t RSHFT k3  &ht_t RCTRL k4
+#define HRML(k1,k2,k3,k4) &ht_t LCTRL k1  &ht_t LSHFT k2  &ht_t LGUI k3  &ht_t LALT k4;
+#define HRMR(k1,k2,k3,k4) &ht_t RALT k1  &ht_t RGUI k2  &ht_t RSHFT k3  &ht_t RCTRL k4;
 
-#define xx &none
+#define xx &none;
 
-#define win_l &kp LC(LEFT)
-#define win_r &kp LC(RIGHT)
+#define win_l &kp LC(LEFT);
+#define win_r &kp LC(RIGHT);
 
-#define tab_l &kp LG(LS(LBKT))
-#define tab_r &kp RG(LS(RBKT))
+#define tab_l &kp LG(LS(LBKT));
+#define tab_r &kp RG(LS(RBKT));
 
-#define wrd_l &kp LA(LEFT)
-#define wrd_r &kp LA(RIGHT)
+#define wrd_l &kp LA(LEFT);
+#define wrd_r &kp LA(RIGHT);
 
-#define lne_l &kp LG(LEFT)
-#define lne_r &kp LG(RIGHT)
+#define lne_l &kp LG(LEFT);
+#define lne_r &kp LG(RIGHT);
 
-#define d_wrd_l &kp LA(BSPC)
-#define d_wrd_r &kp LA(DEL)
+#define d_wrd_l &kp LA(BSPC);
+#define d_wrd_r &kp LA(DEL);
 
-#define d_lne_l &kp LG(BSPC)
-#define d_lne_r &kp LG(DEL)
+#define d_lne_l &kp LG(BSPC);
+#define d_lne_r &kp LG(DEL);
 
 // Layers
 #define BASE 0
