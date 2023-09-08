@@ -7,7 +7,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht_t LCTRL k1  &ht_t LSHFT k2  &ht_t LGUI k3  &ht_t LALT k4
-#define HRMR(k1,k2,k3,k4) &ht_t RALT k1  &ht_t RGUI k2  &ht_t RSHFT k3  &ht_t RCTRL
+#define HRMR(k1,k2,k3,k4) &ht_t RALT k1  &ht_t RGUI k2  &ht_t RSHFT k3  &ht_t RCTRL k4
 
 #define xx &none
 
