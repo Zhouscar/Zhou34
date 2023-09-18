@@ -1,7 +1,7 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#include <behaviors.dtsi>
+#include <behaviors.dtsi>               
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -18,9 +18,7 @@
 #define CO_O &ht_t RCTRL O
 
 #define ZH_LL &lt_h NAV TAB
-//#define ZH_LR &ht_h LSHFT BSPC
-
-#define ZH_LR &kp E
+#define ZH_LR &ht_h LSHFT BSPC
 
 #define ZH_RL &lt_t FUN SPACE
 #define ZH_RR &lt_h SYM RET
