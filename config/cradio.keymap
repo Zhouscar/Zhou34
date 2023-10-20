@@ -12,10 +12,10 @@
 #define CO_S &ht_t LGUI S
 #define CO_T &ht_t LALT T
 
-#define CO_N &ht_t RALT N
-#define CO_E &ht_t RGUI E
-#define CO_I &ht_t RSHFT I
-#define CO_O &ht_t RCTRL O
+#define CO_N &ht_t LALT N
+#define CO_E &ht_t LGUI E
+#define CO_I &ht_t LSHFT I
+#define CO_O &ht_t LCTRL O
 
 #define ZH_LL &lt_h NAV TAB
 #define ZH_LR &ht_h LSHFT BSPC
@@ -29,7 +29,7 @@
 #define win_r &kp LC(RIGHT)
 
 #define tab_l &kp LG(LS(LBKT))
-#define tab_r &kp RG(LS(RBKT))
+#define tab_r &kp LG(LS(RBKT))
 
 #define wrd_l &kp LA(LEFT)
 #define wrd_r &kp LA(RIGHT)
@@ -140,7 +140,7 @@
             &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             lne_l      &kp LEFT   &kp DOWN   &kp RIGHT  lne_r
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  CMD Z   │  CMD X   │  CMD C   │          │  CMD V   │   │  D_LNE_L │  D_WRD_L │  DEL     │  D_WRD_R │  D_LNE_R │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  xx         &kp LG(V)      d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_l
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  xx         &kp LG(V)      d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_r
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
