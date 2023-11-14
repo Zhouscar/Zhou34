@@ -25,8 +25,9 @@
 
 #define xx &none
 
-#define win_l &kp LC(LEFT)
-#define win_r &kp LC(RIGHT)
+#define win_1 &kp LC(N1)
+#define win_2 &kp LC(N2)
+#define win_3 &kp LC(N3)
 
 #define tab_l &kp LG(LS(LBKT))
 #define tab_r &kp LG(LS(RBKT))
@@ -133,14 +134,14 @@
         nav {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  WIN_L   │   WIN_R  │  TAB_L   │  TAB_R   │          │   │          │  WRD_L   │  UP      │  WRD_R   │  Esc     │
-            win_l      win_r      tab_l      tab_r      xx             xx         wrd_l      &kp UP     wrd_r      &kp ESC
+        //│  tab_l   │  WIN_1   │  WIN_2   │  WIN_3   │  tab_r   │   │          │  WRD_L   │  UP      │  WRD_R   │  Esc     │
+            tab_l      win_1      win_2      win_3      tab_r             xx         wrd_l      &kp UP     wrd_r      &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  LCTRL   │  LSHFT   │  LCMD    │  LALT    │          │   │  LNE_L   │  LEFT    │  DOWN    │  RIGHT   │  LNE_R   │
             &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             lne_l      &kp LEFT   &kp DOWN   &kp RIGHT  lne_r
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  CMD Z   │  CMD X   │  CMD C   │          │  CMD V   │   │  D_LNE_L │  D_WRD_L │  DEL     │  D_WRD_R │  D_LNE_R │
-            &kp LG(Z)  &kp LG(X)  &kp LG(C)  xx         &kp LG(V)      d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_r
+        //│  CMD Z   │  CMD X   │  CMD C   │  CMD SPC │  CMD V   │   │  D_LNE_L │  D_WRD_L │  DEL     │  D_WRD_R │  D_LNE_R │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(SPACE)&kp LG(V)    d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_r
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
