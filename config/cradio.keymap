@@ -65,6 +65,12 @@
     };
 
     behaviors {
+        suspend: behavior_reset_suspend {
+            compatible = "zmk,behavior-reset";
+            label = "SUSPEND";
+            type = <RST_SUSPEND>;
+            #binding-cells = <0>;
+        };
         ht_t: hold_tap_tap_preferred {
             compatible = "zmk,behavior-hold-tap";
             label = "hold_tap_tap_preferred";
@@ -134,8 +140,8 @@
         nav {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  WIN_1   │  WIN_2   │  TAB_L   │  TAB_R   │  WIN_3   │   │          │  WRD_L   │  UP      │  WRD_R   │  Esc     │
-            win_1      win_2      tab_l      tab_r      WIN_3          xx         wrd_l      &kp UP     wrd_r      &kp ESC
+        //│  TAB_L   │  WIN_1   │  WIN_2   │  WIN_3   │  TAB_R   │   │          │  WRD_L   │  UP      │  WRD_R   │  Esc     │
+            tab_l      win_1      win_2      win_3      tab_r          xx         wrd_l      &kp UP     wrd_r      &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  LCTRL   │  LSHFT   │  LCMD    │  LALT    │          │   │  LNE_L   │  LEFT    │  DOWN    │  RIGHT   │  LNE_R   │
             &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             lne_l      &kp LEFT   &kp DOWN   &kp RIGHT  lne_r
