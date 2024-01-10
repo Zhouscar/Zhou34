@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/reset.h> 
+#include <dt-bindings/zmk/reset.h>
 
 // Home row mods
 #define CO_A &ht_t LCTRL A
@@ -44,6 +44,8 @@
 
 #define d_lne_l &kp LG(BSPC)
 #define d_lne_r &kp LG(DEL)
+
+#define RST_SUSPEND 0xFE
 
 // Layers
 #define BASE 0
