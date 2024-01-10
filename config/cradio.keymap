@@ -183,8 +183,8 @@
         //│  `       │  USB     │  BLE     │          │  BT_CLR  │   │          │  KP_4    │  KP_5    │  KP_6    │  \       │
             &kp GRAVE  &out OUT_USB &out OUT_BLE xx     &bt BT_CLR     xx         &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │  SUSPEND │   │  KP_0    │  KP_1    │  KP_2    │  KP_3    │          │
-            xx         xx         xx         xx         &suspend       &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  xx 
+        //│ SUSPEND  │          │          │          │          │   │  KP_0    │  KP_1    │  KP_2    │  KP_3    │ SUSPEND  │
+            &suspend   xx         xx         xx         xx            &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3   &suspend
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
