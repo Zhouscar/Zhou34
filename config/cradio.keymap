@@ -152,7 +152,7 @@
         //│  CMD Z   │  CMD X   │  CMD C   │  CMD SPC │  CMD V   │   │  D_LNE_L │  D_WRD_L │  DEL     │  D_WRD_R │  D_LNE_R │
             &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(SPACE)&kp LG(V)    d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_r
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                &trans           xx                    xx               &trans
+                                &trans           &suspend              &suspend          &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
              >;
         };
@@ -169,7 +169,7 @@
         //│  [       │  -       │  _       │  +       │  ]       │   │  0       │  1       │  2       │  3       │  /       │
             &kp LBKT   &kp MINUS  &kp UNDER  &kp PLUS   &kp RBKT       &kp N0     &kp N1     &kp N2     &kp N3     &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                &trans           &suspend              &suspend         &trans
+                                &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
              >;
         };
