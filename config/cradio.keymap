@@ -62,7 +62,7 @@
             timeout-ms = <50>;
             key-positions = <26 27 28>;
             bindings = <&to LOCK>;
-            layers = <LOCK>;
+            layers = <BASE>;
         };
     };
 
