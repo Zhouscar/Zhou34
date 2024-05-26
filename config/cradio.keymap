@@ -116,8 +116,8 @@
         //│ SK LCTRL │ SK LSHFT │ SK LGUI  │ SK LALT  │          │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     │
             &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LALT   xx             &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  LCTRL   │  LSHFT   │  LGUI    │  LALT    │          │   │  TAB     │  BSPC    │  DEL     │  ENT     │          │
-            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             &kp TAB    &kp BSPC   &kp DEL    &kp ENT    xx
+        //│  LCTRL   │  LSHFT   │  LGUI    │  LALT    │          │   │  TAB     │  BSPC    │  DEL     │  RET     │          │
+            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             &kp TAB    &kp BSPC   &kp DEL    &kp RET    xx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
