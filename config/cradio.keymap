@@ -67,8 +67,8 @@
         combo_home {
             timeout-ms = <50>;
             key-positions = <31 32>;
-            bindings = <&kp HOME>
-            layers = <BASE>
+            bindings = <&kp HOME>;
+            layers = <BASE>;
         };
     };
 
