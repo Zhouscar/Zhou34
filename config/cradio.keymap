@@ -9,9 +9,6 @@
 #define ZH_LL &lt_h NAV TAB
 #define ZH_LR &ht_h LSHFT BSPC
 
-#define ZH_RL &ht_t LC(LS(LG(LALT))) SPACE
-#define ZH_RR &lt_h SYM RET
-
 #define xx &none
 
 // Layers
@@ -41,7 +38,7 @@
         combo_home {
             timeout-ms = <50>;
             key-positions = <31 32>;
-            bindings = <&kp HOME>;
+            bindings = <&ht_h LC(LS(LG(LALT))) HOME>;
             layers = <BASE>;
         };
     };
@@ -108,7 +105,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ ' "      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp SQT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                ZH_LL            ZH_LR                 ZH_RL            ZH_RR
+                                ZH_LL            &sk LSHFT             &kp SPACE        ZH_RR
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
              >;
         };
@@ -119,11 +116,11 @@
         //│          │          │          │          │          │   │          │          │  UP      │          │  Esc     │
             xx         xx         xx         xx         xx             xx         xx         &kp UP     xx         &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  LCTRL   │  LSHFT   │  LCMD    │  LALT    │          │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     │
+        //│ SK LCTRL │ SK LSHFT │ SK LGUI  │ SK LALT  │          │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     │
             &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LALT   xx             &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │  DEL     │          │          │
-            xx         xx         xx         xx         xx             xx         xx         &kp DEL    xx         xx
+        //│  LCTRL   │  LSHFT   │  LGUI    │  LALT    │          │   │          │  BSPC    │  DEL     │          │          │
+            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             xx         &kp BSPC   &kp DEL    xx         xx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
