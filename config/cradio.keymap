@@ -11,7 +11,7 @@
 #define ZH_LL &lt_h NAV TAB
 #define ZH_LR &ht_h LSHFT BSPC
 #define ZH_RL &kp SPACE
-#define ZH_RR &ht_h SYM RET
+#define ZH_RR &lt_h SYM RET
 
 // Layers
 #define BASE 0
