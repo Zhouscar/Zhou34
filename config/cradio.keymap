@@ -163,14 +163,14 @@
         nav {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │  W_LEFT  │  UP      │  W_RIGHT │  Esc     │
-            xx         xx         xx         xx         xx             xx       &kp LA(LEFT) &kp UP  &kp LA(RIGHT) &kp ESC
+        //│          │          │          │          │          │   │          │          │  UP      │          │  Esc     │
+            xx         xx         xx         xx         xx             xx         xx         &kp UP     xx         &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ SK LCTRL │ SK LSHFT │ SK LGUI  │ SK LALT  │          │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     
             &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LALT   xx             &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  LCTRL   │  LSHFT   │  LGUI    │  LALT    │          │   │          │          │          │          │          │
-            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             xx         xx         xx         xx         xx
+        //│  LCTRL   │  LSHFT   │  LGUI    │  LALT    │          │   │          │          │  DEL     │          │          │
+            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             xx         xx         &kp DEL    xx         xx
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
