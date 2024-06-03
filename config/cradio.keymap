@@ -13,6 +13,21 @@
 #define ZH_RL &kp SPACE
 #define ZH_RR &lt_h SYM RET
 
+#define tab_l &kp LG(LS(LBKT))
+#define tab_r &kp LG(LS(RBKT))
+
+#define wrd_l &kp LA(LEFT)
+#define wrd_r &kp LA(RIGHT)
+
+#define lne_l &kp LG(LEFT)
+#define lne_r &kp LG(RIGHT)
+
+#define d_wrd_l &kp LA(BSPC)
+#define d_wrd_r &kp LA(DEL)
+
+#define d_lne_l &kp LG(BSPC)
+#define d_lne_r &kp LG(DEL)
+
 // Layers
 #define BASE 0
 #define NAV 1
@@ -163,14 +178,14 @@
         nav {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │  UP      │          │  Esc     │
-            xx         xx         xx         xx         xx             xx         xx         &kp UP     xx         &kp ESC
+        //│          │          │  TAB_L   │  TAB_L   │          │   │          │  WRD_L   │  UP      │  WRD_R   │  Esc     │
+            xx         xx         tab_l      tab_r      xx             xx         wrd_l      &kp UP     wrd_r      &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ SK LCTRL │ SK LSHFT │ SK LGUI  │ SK LALT  │          │   │  HOME    │  LEFT    │  DOWN    │  RIGHT   │  END     
-            &sk LCTRL  &sk LSHFT  &sk LGUI   &sk LALT   xx             &kp HOME   &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
+        //│  LCTRL   │  LSHFT   │  LCMD    │  LALT    │          │   │  LNE_L   │  LEFT    │  DOWN    │  RIGHT   │  LNE_R   │
+            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             lne_l      &kp LEFT   &kp DOWN   &kp RIGHT  lne_r
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  LCTRL   │  LSHFT   │  LGUI    │  LALT    │          │   │          │          │  DEL     │          │          │
-            &kp LCTRL  &kp LSHFT  &kp LGUI   &kp LALT   xx             xx         xx         &kp DEL    xx         xx
+        //│  CMD Z   │  CMD X   │  CMD C   │  CMD SPC │  CMD V   │   │  D_LNE_L │  D_WRD_L │  DEL     │  D_WRD_R │  D_LNE_R │
+            &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(SPACE)&kp LG(V)    d_lne_l    d_wrd_l    &kp DEL    d_wrd_r    d_lne_r
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &trans           xx                    xx               &trans
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
