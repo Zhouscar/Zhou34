@@ -48,7 +48,7 @@
         };
         combo_lock {
             timeout-ms = <50>;
-            key-positions = <26 27 28>;
+            key-positions = <9 19 29>;
             bindings = <&to LOCK>;
             layers = <BASE>;
         };
