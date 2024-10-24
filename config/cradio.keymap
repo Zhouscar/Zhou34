@@ -13,17 +13,17 @@
 #define ZH_RL &kp SPACE
 #define ZH_RR &lt_h SYM RET
 
-#define tab_l &kp LG(LS(LBKT))
-#define tab_r &kp LG(LS(RBKT))
+#define tab_l &kp LG(TAB)
+#define tab_r &kp LG(LS(TAB))
 
-#define wrd_l &kp LA(LEFT)
-#define wrd_r &kp LA(RIGHT)
+#define wrd_l &kp LG(LEFT)
+#define wrd_r &kp LG(RIGHT)
 
-#define lne_l &kp LG(LEFT)
-#define lne_r &kp LG(RIGHT)
+#define lne_l &kp HOME
+#define lne_r &kp END
 
-#define d_wrd_l &kp LA(BSPC)
-#define d_wrd_r &kp LA(DEL)
+#define d_wrd_l &kp LG(BSPC)
+#define d_wrd_r &kp LG(DEL)
 
 #define d_lne_l &kp LG(BSPC)
 #define d_lne_r &kp LG(DEL)
