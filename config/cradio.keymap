@@ -13,8 +13,8 @@
 #define ZH_RL &kp SPACE
 #define ZH_RR &lt_h SYM RET
 
-#define tab_l &kp LG(TAB)
-#define tab_r &kp LG(LS(TAB))
+#define tab_l &kp LG(LS(TAB))
+#define tab_r &kp LG(TAB)
 
 #define wrd_l &kp LG(LEFT)
 #define wrd_r &kp LG(RIGHT)
