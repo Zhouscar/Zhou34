@@ -241,14 +241,14 @@
         game {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ESC     │  Q       │  W       │  E       │  R       │   │  T       │  Y       │  U       │  I       │  O       │
-            &kp ESC    &kp Q      &kp W      &kp E      &kp R          &kp T      &kp Y      &kp U      &kp I      &kp O
+        //│  ESC     │  Q       │  W       │  E       │  R       │   │  Y       │  U       │  I       │  O       │  T       │
+            &kp ESC    &kp Q      &kp W      &kp E      &kp R          &kp Y      &kp U      &kp I      &kp O      &kp T
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  LSHFT   │  A       │  S       │  D       │  F       │   │  G       │  H       │  J       │  K       │  L       │
-            &kp LSHFT  &kp A      &kp S      &kp D      &kp F          &kp G      &kp H      &kp J      &kp K      &kp L
+        //│  LSHFT   │  A       │  S       │  D       │  F       │   │  H       │  J       │  K       │  L       │  G       │
+            &kp LSHFT  &kp A      &kp S      &kp D      &kp F          &kp H      &kp J      &kp K      &kp L      &kp G
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  TAB     │  Z       │  X       │  C       │  V       │   │  B       │  N       │  M       │  P       │  /       │
-            &kp TAB    &kp Z      &kp X      &kp C      &kp V          &kp B      &kp N      &kp M      &kp P      &kp SLASH 
+        //│  TAB     │  Z       │  X       │  C       │  V       │   │  N       │  M       │  P       │  /       │  B       │
+            &kp TAB    &kp Z      &kp X      &kp C      &kp V          &kp N      &kp M      &kp P      &kp SLASH  &kp B 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                 &mo GAME_NUM     &kp SPACE             &kp SPACE        &to BASE
         //                    ╰────────────────┴─────────────────╯   ╰────────────────┴─────────────────╯
